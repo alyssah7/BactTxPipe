@@ -1,0 +1,12 @@
+This repo contains the code to run differential gene expression analysis for bacteria, with and without mutations (or separated by other conditions, see note below about metadata encoding). This pipeline assumes a relatively close reference genome and a 1:1 gene:transcript relationship.
+
+What you need to change: 
+- samples.csv
+- metadata.csv 
+- file paths at the top of Sankefile.py
+	- create a fasta file with rRNA sequences for your genome(s) for computational depletion step and include the path as RIBOSOME_RNA_fasta
+- (maybe) cluster-specific files
+
+
+
+NOTE: The default behavior of DEseq2 is to use alphabetical order to determine the control vs treatment group. The script which runs DEseq2 has the option to specify group levels (currently commented out), but default behavior is to use alphabetical order. There is also a file called deseq2_interpretation.csv that is now produced in your output directory as a safeguard. This file guides the appropriate interpretation of results given reference assignment in DEseq2.

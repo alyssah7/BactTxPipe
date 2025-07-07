@@ -3,3 +3,7 @@ links/
 logs/
 main*.txt
 [0-9]*/
+bowtie2*/
+data/
+.snakemake/
+*kallisto.idx
